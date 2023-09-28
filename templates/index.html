@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumo de API de chatGPT con FLASk y Jinja2</title>
+</head>
+<body>
+    <h1>
+       Uso de API de chatGPT con FLASk y Jinja2
+    </h1>
+     <div id="chat-container">
+        <div id="chat-history">
+            {% for mensaje in historial %}
+                <p><strong>{{ mensaje[0] }}:</strong> {{ mensaje[1] }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <form method="POST" action="/">
+        <input type="text" id="pregunta" name="pregunta" placeholder="Escribe tu pregunta..." required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
